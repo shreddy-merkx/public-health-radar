@@ -1,0 +1,16 @@
+{
+  "name": "Public Health Radar",
+  "short_name": "PH Radar",
+  "description": "Die wichtigsten Public-Health-Nachrichten aus hunderten Quellen – sortiert nach Wichtigkeit und Kategorien.",
+  "lang": "de",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f6f5",
+  "theme_color": "#0d5c63",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Public Health Radar</title>
+<meta name="description" content="Die wichtigsten Public-Health-Nachrichten aus hunderten Quellen – sortiert nach Wichtigkeit.">
+<meta name="theme-color" content="#0d5c63">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="PH Radar">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="kopf">
+  <div class="kopf-zeile">
+    <div class="marke">
+      <img src="icons/icon-192.png" alt="" width="30" height="30">
+      <div>
+        <h1>Public Health Radar</h1>
+        <p id="stand" class="stand">Lade …</p>
+      </div>
+    </div>
+    <div class="kopf-knoepfe">
+      <button id="btn-suche" class="icon-btn" aria-label="Suchen" title="Suchen">
+        <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button id="btn-info" class="icon-btn" aria-label="Info & Quellen" title="Info & Quellen">
+        <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v6M12 7.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="suchleiste" class="suchleiste" hidden>
+    <input id="suchfeld" type="search" placeholder="Stichwort, z. B. Masern, WHO, Hitze …" autocomplete="off">
+  </div>
+  <nav id="tabs" class="tabs" aria-label="Kategorien"></nav>
+  <div class="filter">
+    <div class="segment" id="f-sprache" role="group" aria-label="Sprache">
+      <button data-v="alle" class="an">Alle</button><button data-v="de">DE</button><button data-v="en">EN</button>
+    </div>
+    <div class="segment" id="f-zeit" role="group" aria-label="Zeitraum">
+      <button data-v="1">24 h</button><button data-v="3">3 T</button><button data-v="7" class="an">7 T</button>
+    </div>
+    <div class="segment" id="f-sort" role="group" aria-label="Sortierung">
+      <button data-v="p" class="an" title="Nach Wichtigkeit">Wichtig</button><button data-v="d" title="Nach Datum">Neu</button>
+    </div>
+  </div>
+</header>
+
+<main id="liste" class="liste" aria-live="polite"></main>
+
+<section id="info" class="info" hidden>
+  <div class="info-karte">
+    <button id="info-zu" class="icon-btn schliessen" aria-label="Schließen">✕</button>
+    <h2>So funktioniert die App</h2>
+    <p>Mehrmals täglich durchsucht ein kostenloser Server automatisch RSS-Feeds von Gesundheitsbehörden, Fachjournalen und Medien sowie Google News, Bing News und PubMed. Meldungen zum gleichen Thema werden gebündelt.</p>
+    <p><b>Wichtigkeit</b> (●●●●●) ergibt sich aus: Vertrauenswürdigkeit der Quelle, wie viele verschiedene Seiten darüber berichten, Signalwörtern wie „Ausbruch“ oder „Warnung“ und Aktualität.</p>
+    <div id="statistik" class="statistik"></div>
+    <h3>App auf den Homescreen legen</h3>
+    <p><b>iPhone (Safari):</b> Teilen-Symbol □↑ → „Zum Home-Bildschirm“.<br><b>Android (Chrome):</b> Menü ⋮ → „App installieren“ bzw. „Zum Startbildschirm hinzufügen“.</p>
+    <h3>Quellen, die gerade nicht antworten</h3>
+    <div id="fehlerliste" class="fehlerliste">Wird geladen …</div>
+    <p class="klein">Merkliste und „gelesen“-Markierungen werden nur auf diesem Gerät gespeichert.</p>
+    <button id="btn-gelesen-reset" class="text-btn">Alle „gelesen“-Markierungen löschen</button>
+  </div>
+</section>
+
+<template id="karte-vorlage">
+  <article class="karte">
+    <div class="stufe" aria-hidden="true"></div>
+    <div class="inhalt">
+      <div class="meta-oben"><span class="kats"></span><span class="neu" hidden>NEU</span></div>
+      <a class="titel" target="_blank" rel="noopener"></a>
+      <p class="auszug" hidden></p>
+      <div class="meta">
+        <span class="quelle"></span><span class="punkt">·</span><time></time>
+        <button class="mehr-quellen" hidden></button>
+      </div>
+      <ul class="andere" hidden></ul>
+    </div>
+    <button class="merken" aria-label="Merken" title="Merken">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 3h12v18l-6-4-6 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    </button>
+  </article>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>

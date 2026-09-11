@@ -1,0 +1,153 @@
+# ------------------------------------------------------------------------------------------
+# QUELLENLISTE – hier kannst du Quellen hinzufügen oder löschen (eine Zeile = eine Quelle)
+# Aufbau jeder Zeile:   typ | Name | Adresse oder Suchbegriffe | Gewicht | Sprache
+#
+# typ:     feed  = direkter RSS-Feed einer Webseite
+#          suche = Suchbegriffe; die App durchsucht damit Google News + Bing News (= tausende Nachrichtenseiten)
+#          pubmed = Suchbegriff für die Fachdatenbank PubMed (Studien)
+# gewicht: 1 (unwichtig) bis 5 (sehr vertrauenswürdig / wichtig)
+# sprache: de oder en
+# Zeilen mit # am Anfang werden ignoriert.
+# ------------------------------------------------------------------------------------------
+# ===== Internationale Gesundheitsbehörden =====
+feed   | WHO – News | https://www.who.int/rss-feeds/news-english.xml | 5 | en
+feed   | ECDC – News | https://www.ecdc.europa.eu/en/taxonomy/term/1307/feed | 5 | en
+feed   | CDC – Newsroom | https://tools.cdc.gov/api/v2/resources/media/132608.rss | 5 | en
+feed   | CDC – MMWR | https://tools.cdc.gov/api/v2/resources/media/342778.rss | 4 | en
+feed   | CDC – Health Alert Network | https://tools.cdc.gov/api/v2/resources/media/413690.rss | 5 | en
+feed   | CDC – Emerging Infectious Diseases | https://wwwnc.cdc.gov/eid/rss/ahead-of-print.xml | 4 | en
+feed   | UN News – Health | https://news.un.org/feed/subscribe/en/news/topic/health/feed/rss.xml | 4 | en
+feed   | EMA – News | https://www.ema.europa.eu/en/news.xml | 4 | en
+feed   | FDA – Press Releases | https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml | 4 | en
+feed   | FDA – Recalls | https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/recalls/rss.xml | 3 | en
+feed   | NIH – News Releases | https://www.nih.gov/news-releases/feed.xml | 3 | en
+feed   | EFSA – News | https://www.efsa.europa.eu/en/all/rss | 3 | en
+feed   | UKHSA (UK Health Security Agency) | https://www.gov.uk/government/organisations/uk-health-security-agency.atom | 4 | en
+feed   | Eurosurveillance | https://www.eurosurveillance.org/rss/content/eurosurveillance/latestarticles?fmt=rss | 4 | en
+feed   | ReliefWeb – Epidemics | https://reliefweb.int/updates/rss.xml?search=epidemic | 3 | en
+# ===== Fachjournale =====
+feed   | The Lancet | https://www.thelancet.com/rssfeed/lancet_online.xml | 4 | en
+feed   | The Lancet Public Health | https://www.thelancet.com/rssfeed/lanpub_current.xml | 4 | en
+feed   | The Lancet Global Health | https://www.thelancet.com/rssfeed/langlo_current.xml | 4 | en
+feed   | The Lancet Infectious Diseases | https://www.thelancet.com/rssfeed/laninf_current.xml | 4 | en
+feed   | The Lancet Regional Health – Europe | https://www.thelancet.com/rssfeed/lanepe_current.xml | 4 | en
+feed   | The Lancet Planetary Health | https://www.thelancet.com/rssfeed/lanplh_current.xml | 3 | en
+feed   | BMJ | https://www.bmj.com/rss/recent.xml | 4 | en
+feed   | BMJ Global Health | https://gh.bmj.com/rss/current.xml | 3 | en
+feed   | BMJ Public Health | https://bmjpublichealth.bmj.com/rss/current.xml | 3 | en
+feed   | Journal of Epidemiology & Community Health | https://jech.bmj.com/rss/current.xml | 3 | en
+feed   | Tobacco Control | https://tobaccocontrol.bmj.com/rss/current.xml | 3 | en
+feed   | NEJM | https://www.nejm.org/action/showFeed?type=etoc&feed=rss&jc=nejm | 4 | en
+feed   | JAMA | https://jamanetwork.com/rss/site_3/67.xml | 4 | en
+feed   | JAMA Network Open | https://jamanetwork.com/rss/site_214/174.xml | 3 | en
+feed   | Nature Medicine | https://www.nature.com/nm.rss | 4 | en
+feed   | PLOS Medicine | https://journals.plos.org/plosmedicine/feed/atom | 3 | en
+feed   | PLOS Global Public Health | https://journals.plos.org/globalpublichealth/feed/atom | 3 | en
+feed   | American Journal of Public Health | https://ajph.aphapublications.org/action/showFeed?type=etoc&feed=rss&jc=ajph | 3 | en
+feed   | BMC Public Health | https://bmcpublichealth.biomedcentral.com/articles/most-recent/rss.xml | 3 | en
+feed   | medRxiv – Epidemiology | https://connect.medrxiv.org/medrxiv_xml.php?subject=Epidemiology | 2 | en
+feed   | medRxiv – Public & Global Health | https://connect.medrxiv.org/medrxiv_xml.php?subject=Public_and_Global_Health | 2 | en
+feed   | medRxiv – Infectious Diseases | https://connect.medrxiv.org/medrxiv_xml.php?subject=Infectious_Diseases | 2 | en
+feed   | Bundesgesundheitsblatt | https://link.springer.com/search.rss?facet-content-type=Article&facet-journal-id=103&channel-name=Bundesgesundheitsblatt | 3 | de
+pubmed | PubMed – Public Health | "public health"[MeSH Major Topic] | 3 | en
+pubmed | PubMed – Ausbrüche | "disease outbreaks"[MeSH Terms] | 3 | en
+pubmed | PubMed – Gesundheitspolitik | "health policy"[MeSH Major Topic] | 2 | en
+pubmed | PubMed – Deutschland | "public health"[MeSH Terms] AND Germany[MeSH Terms] | 3 | en
+# ===== Internationale Fachmedien & Presse =====
+feed   | Health Policy Watch | https://healthpolicy-watch.news/feed/ | 4 | en
+feed   | CIDRAP | https://www.cidrap.umn.edu/rss.xml | 4 | en
+feed   | STAT News | https://www.statnews.com/feed/ | 4 | en
+feed   | KFF Health News | https://kffhealthnews.org/feed/ | 4 | en
+feed   | The Conversation – Health | https://theconversation.com/uk/health/articles.atom | 3 | en
+feed   | BBC – Health | https://feeds.bbci.co.uk/news/health/rss.xml | 4 | en
+feed   | The Guardian – Health | https://www.theguardian.com/society/health/rss | 4 | en
+feed   | The Guardian – Global Development | https://www.theguardian.com/global-development/rss | 3 | en
+feed   | New York Times – Health | https://rss.nytimes.com/services/xml/rss/nyt/Health.xml | 4 | en
+feed   | NPR – Health | https://feeds.npr.org/1128/rss.xml | 3 | en
+feed   | ScienceDaily – Public Health | https://www.sciencedaily.com/rss/health_medicine/public_health.xml | 2 | en
+feed   | ScienceDaily – Health | https://www.sciencedaily.com/rss/health_medicine.xml | 2 | en
+feed   | Medical Xpress | https://medicalxpress.com/rss-feed/ | 2 | en
+feed   | News-Medical | https://www.news-medical.net/syndication.axd?format=rss | 2 | en
+feed   | Fierce Healthcare | https://www.fiercehealthcare.com/rss/xml | 2 | en
+feed   | Our World in Data | https://ourworldindata.org/atom.xml | 3 | en
+# ===== Deutschsprachige Medien =====
+feed   | Deutsches Ärzteblatt | https://www.aerzteblatt.de/rss/news.asp | 4 | de
+feed   | tagesschau – Gesundheit | https://www.tagesschau.de/wissen/gesundheit/index~rss2.xml | 4 | de
+feed   | SPIEGEL – Gesundheit | https://www.spiegel.de/gesundheit/index.rss | 3 | de
+feed   | ZEIT – Gesundheit | https://newsfeed.zeit.de/wissen/gesundheit/index | 3 | de
+feed   | Süddeutsche – Gesundheit | https://rss.sueddeutsche.de/rss/Gesundheit | 3 | de
+feed   | FAZ – Medizin & Ernährung | https://www.faz.net/rss/aktuell/wissen/medizin-ernaehrung/ | 3 | de
+feed   | WELT – Gesundheit | https://www.welt.de/feeds/section/gesundheit.rss | 2 | de
+feed   | FOCUS – Gesundheit | https://rss.focus.de/gesundheit/ | 2 | de
+feed   | Der Standard – Gesundheit | https://www.derstandard.at/rss/gesundheit | 3 | de
+feed   | ORF – Science | https://rss.orf.at/science.xml | 2 | de
+feed   | RKI – Aktuelles | https://www.rki.de/SiteGlobals/Functions/RSSFeed/RSSGenerator_nt.xml | 5 | de
+# ===== Gezielte Suche auf Webseiten ohne eigenen Feed (via Google News "site:") =====
+suche  | Behörden DE | site:rki.de OR site:bundesgesundheitsministerium.de OR site:bioeg.de OR site:bzga.de OR site:pei.de | 5 | de
+suche  | Behörden DE 2 | site:bfarm.de OR site:bfr.bund.de OR site:g-ba.de OR site:iqwig.de OR site:umweltbundesamt.de | 5 | de
+suche  | Behörden AT/CH | site:ages.at OR site:sozialministerium.at OR site:goeg.at OR site:bag.admin.ch | 4 | de
+suche  | Fachverbände DE | site:dkfz.de OR site:dge.de OR site:bundesaerztekammer.de OR site:dkgev.de OR site:leopoldina.org | 4 | de
+suche  | Kassen DE | site:gkv-spitzenverband.de OR site:aok.de OR site:tk.de OR site:dak.de OR site:barmer.de | 3 | de
+suche  | Fachpresse DE | site:aerztezeitung.de OR site:pharmazeutische-zeitung.de OR site:deutsche-apotheker-zeitung.de OR site:apotheke-adhoc.de | 4 | de
+suche  | Fachpresse DE 2 | site:medical-tribune.de OR site:springermedizin.de OR site:sciencemediacenter.de OR site:idw-online.de | 3 | de
+suche  | WHO & Regionen | site:who.int OR site:africacdc.org OR site:paho.org | 5 | en
+suche  | Globale Organisationen | site:gavi.org OR site:theglobalfund.org OR site:msf.org OR site:unicef.org OR site:unaids.org | 4 | en
+suche  | Globale Fachmedien | site:cidrap.umn.edu OR site:devex.com OR site:thinkglobalhealth.org OR site:healthdata.org | 4 | en
+suche  | Public-Health-Schulen | site:lshtm.ac.uk OR site:hsph.harvard.edu OR site:publichealth.jhu.edu OR site:imperial.ac.uk | 3 | en
+# ===== Themen-Suche Deutsch (Google News + Bing News) =====
+suche  | Public Health | "Public Health" OR "öffentliche Gesundheit" | 3 | de
+suche  | Gesundheitsamt | Gesundheitsamt | 3 | de
+suche  | Ausbruch | Ausbruch Infektion OR Erreger | 3 | de
+suche  | Masern | Masern | 3 | de
+suche  | Vogelgrippe | Vogelgrippe OR H5N1 | 3 | de
+suche  | Impfen | Impfung OR Impfquote OR Impfstoff | 3 | de
+suche  | Grippe & Atemwege | Grippewelle OR Influenza OR RSV | 3 | de
+suche  | Corona | Corona OR COVID-19 | 2 | de
+suche  | Hitze | Hitze Gesundheit OR Hitzeschutz OR Hitzetote | 3 | de
+suche  | Luft & Umwelt | Luftverschmutzung Gesundheit OR Feinstaub OR PFAS | 3 | de
+suche  | Gesundheitspolitik | Gesundheitspolitik OR Gesundheitsministerin OR Gesundheitsminister | 3 | de
+suche  | Krankenhausreform | Krankenhausreform OR Pflegereform | 3 | de
+suche  | Krankenkassen | Krankenkassen Beitrag OR GKV Finanzen | 2 | de
+suche  | Prävention | Prävention Gesundheit OR Gesundheitsförderung | 3 | de
+suche  | Lieferengpässe | Lieferengpass Medikamente OR Arzneimittelmangel | 3 | de
+suche  | Lebensmittelwarnung | Lebensmittelwarnung OR Rückruf Salmonellen OR Listerien | 2 | de
+suche  | Psychische Gesundheit | psychische Gesundheit OR Depression Studie | 3 | de
+suche  | Einsamkeit | Einsamkeit Gesundheit | 2 | de
+suche  | Übergewicht | Adipositas OR Übergewicht Kinder | 2 | de
+suche  | Sucht | Alkohol Gesundheit OR Rauchen OR Cannabis Gesundheit | 2 | de
+suche  | Antibiotikaresistenz | Antibiotikaresistenz OR multiresistente Keime | 3 | de
+suche  | HIV TB Hepatitis | HIV OR Tuberkulose OR Hepatitis | 2 | de
+suche  | Tropen & Zecken | Dengue OR West-Nil OR Mpox OR FSME | 3 | de
+suche  | Krebsvorsorge | Krebs Früherkennung OR Krebsvorsorge | 2 | de
+suche  | Digitale Gesundheit | elektronische Patientenakte OR Gesundheitsdaten | 2 | de
+suche  | Lebenserwartung | Lebenserwartung OR Sterblichkeit Studie | 2 | de
+suche  | Kindergesundheit | Kindergesundheit OR Kinderarzt Engpass | 2 | de
+# ===== Themen-Suche Englisch (Google News + Bing News) =====
+suche  | Public health | "public health" | 3 | en
+suche  | Outbreak | outbreak disease | 3 | en
+suche  | Epidemic | epidemic OR pandemic | 3 | en
+suche  | Measles | measles | 3 | en
+suche  | Bird flu | "bird flu" OR H5N1 | 3 | en
+suche  | Vaccines | vaccination rates OR vaccine policy | 3 | en
+suche  | WHO | "World Health Organization" | 3 | en
+suche  | CDC | CDC health | 3 | en
+suche  | Surveillance | "disease surveillance" OR "health security" | 3 | en
+suche  | Tropical diseases | cholera OR mpox OR dengue OR ebola OR marburg | 3 | en
+suche  | AMR | "antimicrobial resistance" OR superbug | 3 | en
+suche  | Health policy | "health policy" OR "health reform" | 3 | en
+suche  | Global health | "global health" funding | 3 | en
+suche  | Mental health | "mental health" study | 2 | en
+suche  | Air pollution | "air pollution" health | 2 | en
+suche  | Heat & climate | heatwave health OR "climate change" health | 3 | en
+suche  | Obesity & diabetes | obesity rates OR diabetes prevalence | 2 | en
+suche  | Tobacco & alcohol | tobacco OR vaping OR alcohol health | 2 | en
+suche  | Health equity | "health equity" OR "health inequalities" | 2 | en
+suche  | Life expectancy | "life expectancy" | 2 | en
+suche  | Drug shortage | "drug shortage" OR "medicine shortage" | 2 | en
+suche  | Food safety | "food safety" recall OR salmonella OR listeria | 2 | en
+suche  | Maternal & child health | "maternal health" OR "child health" OR "infant mortality" | 2 | en
+suche  | Malaria TB HIV | malaria OR tuberculosis OR HIV | 2 | en
+suche  | Polio | polio | 3 | en
+suche  | Long Covid | "long covid" OR COVID variant | 2 | en
+suche  | Overdose | overdose OR opioid crisis | 2 | en
+suche  | Europe public health | Europe "public health" OR EU health | 3 | en

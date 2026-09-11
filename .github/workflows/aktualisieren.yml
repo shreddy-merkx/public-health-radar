@@ -1,0 +1,62 @@
+# Diese Datei sagt GitHub: "Führe mehrmals am Tag den Sammler aus und veröffentliche die App."
+name: Nachrichten aktualisieren
+
+on:
+  schedule:
+    # Uhrzeiten in UTC (deutsche Sommerzeit = UTC+2): 6, 10, 14, 18 und 22 Uhr
+    - cron: "0 4,8,12,16,20 * * *"
+  workflow_dispatch:      # erlaubt den Knopf "Run workflow" zum manuellen Starten
+  push:
+    branches: [main]      # läuft auch sofort, wenn du Dateien änderst
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  sammeln:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Dateien holen
+        uses: actions/checkout@v5
+
+      - name: Quellen durchsuchen, bewerten und sortieren
+        run: python3 sammler/sammeln.py
+
+      - name: Wach bleiben (GitHub pausiert sonst nach 60 Tagen ohne Änderung)
+        run: |
+          letzte=$(git log -1 --format=%ct)
+          jetzt=$(date +%s)
+          if [ $(( (jetzt - letzte) / 86400 )) -ge 40 ]; then
+            git config user.name "radar-bot"
+            git config user.email "radar-bot@users.noreply.github.com"
+            date -u > sammler/letzter-lauf.txt
+            git add sammler/letzter-lauf.txt
+            git commit -m "Automatisch: wach bleiben"
+            git push
+          fi
+
+      - name: Pages vorbereiten
+        uses: actions/configure-pages@v5
+
+      - name: App hochladen
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: app
+
+  veroeffentlichen:
+    needs: sammeln
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: App veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4

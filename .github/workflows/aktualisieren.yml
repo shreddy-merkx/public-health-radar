@@ -26,6 +26,14 @@ jobs:
       - name: Dateien holen
         uses: actions/checkout@v5
 
+      - name: Dateien ordnen (falls alles lose hochgeladen wurde)
+        run: |
+          mkdir -p sammler app/icons
+          for f in sammeln.py quellen.txt einstellungen.json; do [ -f "$f" ] && mv "$f" sammler/ || true; done
+          for f in index.html app.js style.css sw.js manifest.webmanifest; do [ -f "$f" ] && mv "$f" app/ || true; done
+          for f in *.png; do [ -f "$f" ] && mv "$f" app/icons/ || true; done
+          ls -R sammler app
+
       - name: Quellen durchsuchen, bewerten und sortieren
         run: python3 sammler/sammeln.py
 
